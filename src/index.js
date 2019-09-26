@@ -7,7 +7,11 @@ import { graphqlExpress, graphiqlExpress } from "graphql-server-express";
 import { makeExecutableSchema } from "graphql-tools";
 import resolvers from "./resolvers";
 import schema from "./schema";
+var cors = require("cors");
+
 const app = express();
+app.use(cors());
+
 const executableSchema = makeExecutableSchema({
   typeDefs: schema,
   resolvers
