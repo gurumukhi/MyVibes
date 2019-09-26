@@ -7,11 +7,18 @@ const schema = `
 
 const Query = `
   type Query {
-    helloWorld: String!
+    hello: Hello!
   }
 `;
 
-export default [
-    schema,
-    Query
-  ];
+const Hello = `
+  type Hello {
+    world: World!
+  }
+`;
+const World = `
+  type World {
+    text: String!
+  }
+`;
+export default [schema, Query, Hello, World];
